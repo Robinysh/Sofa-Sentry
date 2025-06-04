@@ -1,4 +1,5 @@
 # Sofa Sentry
+Raspberry pi controlled water turret for fending off cats peeing on the sofa.
 
 ## Setup
 
