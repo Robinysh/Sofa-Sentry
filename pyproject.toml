@@ -6,7 +6,16 @@ authors = [
     {name = "Robin Yuen Shing Hei", email = "robin.ysh@gmail.com"},
 ]
 dependencies = [
+    "gpiozero>=2.0.1",
+    "onnxruntime>=1.22.0",
+    "onnxslim>=0.1.57",
+    "picamera2>=0.3.27",
+    "rpi-hardware-pwm>=0.3.0",
+    "rpi-kms>=0.1a1",
+    "rpi-lgpio>=0.6",
+    "rpi-libcamera>=0.1a10",
     "typer>=0.15.3",
+    "ultralytics[export]>=8.3.150",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -24,6 +33,15 @@ dev = [
     "yq>=3.2.3",
     "pre-commit>=4.2.0",
 ]
+
+[project.scripts]
+start = "sofa_sentry.main:main"
+
+[tool.uv]
+override-dependencies = [
+    "tensorflow-decision-forests; sys_platform == 'never'",
+]
+package=true
 
 [tool.pylint]
 messages_control.disable = "logging-fstring-interpolation,unspecified-encoding"
